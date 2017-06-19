@@ -2,7 +2,7 @@
  * Created by ewalspr on 6/16/2017.
  */
 import { Component } from 'angular2/core';
-import { EventListComponent } from "./events/event-list.component";
+import { EventListComponent } from './events/event-list.component';
 
 @Component({
     selector: 'events-app',

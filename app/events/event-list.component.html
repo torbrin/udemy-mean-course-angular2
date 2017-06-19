@@ -7,7 +7,7 @@
 <body>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Event List
+        {{ pageTitle }}
     </div>
     <!-- Search the Events -->
     <div class="panel-body">
@@ -25,7 +25,7 @@
 
     </div>
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" *ngIf="events && events.length">
             <thead>
                 <tr>
                     <th>
@@ -41,7 +41,14 @@
                 </tr>
             </thead>
             <tbody>
-
+                <tr *ngFor = "#event of events">
+                    <td></td>
+                    <td>{{event.name}}</td>
+                    <td>{{event.code}}</td>
+                    <td>{{event.date}}</td>
+                    <td>{{event.fee}}</td>
+                    <td>{{event.rating}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
