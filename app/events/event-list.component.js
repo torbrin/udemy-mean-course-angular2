@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './event-filter.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, event_filter_pipe_1;
     var EventListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (event_filter_pipe_1_1) {
+                event_filter_pipe_1 = event_filter_pipe_1_1;
             }],
         execute: function() {
             EventListComponent = (function () {
@@ -24,6 +27,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
+                    this.searchCriteria = 'beach';
                     this.events = [
                         {
                             'name': 'Event 1',
@@ -110,10 +114,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 EventListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
                 };
+                EventListComponent.prototype.ngOnInit = function () {
+                    console.log('I\'m OnInit!');
+                };
                 EventListComponent = __decorate([
                     core_1.Component({
                         selector: 'el-events',
-                        templateUrl: 'app/events/event-list.component.html'
+                        templateUrl: 'app/events/event-list.component.html',
+                        styleUrls: ['app/events/event-list.component.css'],
+                        pipes: [event_filter_pipe_1.EventFilterPipe]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], EventListComponent);

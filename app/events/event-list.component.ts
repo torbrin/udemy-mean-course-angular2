@@ -1,19 +1,24 @@
 /**
  * Created by ewalspr on 6/16/2017.
  */
-import { Component } from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
+import { IEvent } from './event';
+import { EventFilterPipe } from './event-filter.pipe';
 
 @Component({
     selector: 'el-events',
-    templateUrl: 'app/events/event-list.component.html'
+    templateUrl: 'app/events/event-list.component.html',
+    styleUrls: ['app/events/event-list.component.css'],
+    pipes: [EventFilterPipe]
 })
 
-export class EventListComponent {
+export class EventListComponent implements OnInit {
     pageTitle: string = 'Event List';
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    events: any[] = [
+    searchCriteria: string = 'beach';
+    events: IEvent[] = [
     {
         'name': 'Event 1',
         'code': 'Evt100',
@@ -98,5 +103,9 @@ export class EventListComponent {
 
     toggleImage(): void {
         this.showImage = !this.showImage;
+    }
+
+    ngOnInit(): void {
+        console.log('I\'m OnInit!');
     }
 }
