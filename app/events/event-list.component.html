@@ -14,8 +14,7 @@
         <div class="row">
             <div class="col-md-2">Search by:</div>
             <div class="col-md-4">
-                <input type="text"
-                        [(ngModel)] = 'searchCriteria' />
+                <input type="text" [(ngModel)] = 'searchCriteria' />
             </div>
         </div>
         <div class="row">
@@ -50,12 +49,16 @@
                              [title]='event.name'
                              [style.width.px]='imageWidth'
                              [style.margin.px]='imageMargin' >
-                   </td>
+                    </td>
                     <td>{{event.name}}</td>
                     <td>{{event.code | lowercase}}</td>
                     <td>{{event.date}}</td>
                     <td>{{event.fee | currency: 'USD':true:'1.2-2'}}</td>
-                    <td>{{event.rating}}</td>
+                    <td>
+                        <acw-thumb [rating]='event.rating'
+                                (ratingClicked)='onRatingClicked($event)'>
+                        </acw-thumb>
+                    </td>
                 </tr>
             </tbody>
         </table>
