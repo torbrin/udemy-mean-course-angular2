@@ -1,4 +1,4 @@
-System.register(['angular2/core', './events/event-list.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './events/event-list.component', './events/event.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './events/event-list.component'], function(exp
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, event_list_component_1;
+    var core_1, event_list_component_1, event_service_1;
     var AppComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './events/event-list.component'], function(exp
             },
             function (event_list_component_1_1) {
                 event_list_component_1 = event_list_component_1_1;
+            },
+            function (event_service_1_1) {
+                event_service_1 = event_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -29,7 +32,8 @@ System.register(['angular2/core', './events/event-list.component'], function(exp
                     core_1.Component({
                         selector: 'events-app',
                         template: "\n    <div>\n        <h1>{{pageTitle}}</h1>\n        <el-events></el-events>\n    </div>\n    ",
-                        directives: [event_list_component_1.EventListComponent]
+                        directives: [event_list_component_1.EventListComponent],
+                        providers: [event_service_1.EventService]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
