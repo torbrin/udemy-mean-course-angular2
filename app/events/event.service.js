@@ -27,7 +27,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             EventService = (function () {
                 function EventService(_http) {
                     this._http = _http;
-                    this._eventUrl = 'http://localhost:40000/';
+                    this._eventUrl = 'http://localhost:55000/udemy-angular/events';
                 }
                 EventService.prototype.getEvents = function () {
                     return this._http.get(this._eventUrl)
@@ -49,4 +49,5 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
         }
     }
 });
+
 //# sourceMappingURL=event.service.js.map

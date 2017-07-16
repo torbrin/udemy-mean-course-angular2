@@ -6,13 +6,13 @@ import { IEvent } from './event';
 import { EventFilterPipe } from './event-filter.pipe';
 import { ThumbComponent } from '../shared/thumbs.component';
 import { EventService } from './event.service';
+import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 @Component({
-    selector: 'el-events',
     templateUrl: 'app/events/event-list.component.html',
     styleUrls: ['app/events/event-list.component.css'],
     pipes: [EventFilterPipe],
-    directives: [ThumbComponent]
+    directives: [ThumbComponent, ROUTER_DIRECTIVES]
 })
 
 export class EventListComponent implements OnInit {

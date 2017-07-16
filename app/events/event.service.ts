@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EventService {
 
-    private _eventUrl = 'http://localhost:40000/';
+    private _eventUrl = 'http://localhost:55000/udemy-angular/events';
 
     constructor(private _http: Http) { }
 
